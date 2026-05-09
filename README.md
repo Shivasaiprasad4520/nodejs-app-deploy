@@ -35,5 +35,37 @@ step:1
 ---
 
 9) spin up a ec2 ubuntu instance then update and install docker and generate keygen for accessing
-     
 
+   sudo apt-get update
+   
+   sudo apt-get install ca-certificates curl -y
+
+   sudo install -m 0755 -d /etc/apt/keyrings
+
+   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
+   sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+   echo \
+     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
+     https://download.docker.com/linux/ubuntu \
+     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+   sudo apt update
+   
+   sudo apt install docker-compose-plugin -y
+   
+check version
+
+   docker compose version
+   
+then clone the repo to EC2 Instance  
+
+then build the container
+
+   docker-compose up -d --build
+
+To see changes update something in index.js then push to repo so it reflect in the page directly
+
+   
