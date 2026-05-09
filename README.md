@@ -52,13 +52,13 @@ step:1
      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-   sudo apt update
+    sudo apt update
    
-   sudo apt install docker-compose-plugin -y
+    sudo apt install docker-compose-plugin -y
    
 check version
 
-   docker compose version
+    docker compose version
    
 then clone the repo to EC2 Instance  
 
