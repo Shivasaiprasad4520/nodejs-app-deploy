@@ -64,7 +64,7 @@ then clone the repo to EC2 Instance
 
 then build the container
 
-   docker-compose up -d --build
+    docker-compose up -d --build
 
 To see changes update something in index.js then push to repo so it reflect in the page directly
 
